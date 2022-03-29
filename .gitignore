@@ -24,3 +24,10 @@
 # idea
 .idea/*
 *.idea/*
+/Homework/.idea/.gitignore
+/Homework/.idea/Homework.iml
+/Homework/Homework.iml
+/java_code.iml
+/Homework/.idea/misc.xml
+/Homework/.idea/modules.xml
+/Homework/.idea/vcs.xml
