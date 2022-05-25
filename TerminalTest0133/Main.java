@@ -2,6 +2,11 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * @author EaveLuo
+ * @editTimestamp 2022-05-25 13:31
+ * @version 1.0
+ */
 public class Main {
 
     // 初始化歌曲列表
@@ -10,7 +15,7 @@ public class Main {
         System.out.println("-------欢迎来到EaveLuo的KTV-------");
         System.out.print("您是否需要随机点一批热门歌曲？y/n：");
         String input = scanner.next();
-        if (input.equalsIgnoreCase("Y")) {
+        if ("Y".equalsIgnoreCase(input)) {
             addRandomHotSong(songList, 10);
         }
     }
@@ -67,8 +72,8 @@ public class Main {
 
     // 3.将歌曲置顶
     public static void topSong(ArrayList<String> songList, String input) {
-        Scanner scanner = new Scanner(System.in);
         try {
+            Scanner scanner = new Scanner(System.in);
             if (input.matches("[0-9]+")) {
                 if (songList.size() >= Integer.parseInt(input)) {
                     String needSong = songList.get(Integer.parseInt(input) - 1);
@@ -88,7 +93,7 @@ public class Main {
                     songList.set(0, input);
                 } else {
                     System.out.print("您输入的歌曲在已点歌单中不存在，是否将其添加至歌单并置顶？y/n：");
-                    if (scanner.next().equalsIgnoreCase("Y")) {
+                    if ("Y".equalsIgnoreCase(scanner.next())) {
                         Boolean res = addSong(songList, input);
                         if (res) {
                             topSong(songList, input);
@@ -182,7 +187,7 @@ public class Main {
                     case "6":
                         System.out.print("您确定要清空歌单吗？y/n：");
                         String input6 = scanner.next();
-                        if (input6.equalsIgnoreCase("Y")) {
+                        if ("Y".equalsIgnoreCase(input6)) {
                             songList.clear();
                         }
                         break;
