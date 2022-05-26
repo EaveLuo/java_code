@@ -9,17 +9,6 @@ import java.util.Scanner;
  */
 public class Main {
 
-    // 初始化歌曲列表
-    public static void initializeSongList(ArrayList<String> songList) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("-------欢迎来到EaveLuo的KTV-------");
-        System.out.print("您是否需要随机点一批热门歌曲？y/n：");
-        String input = scanner.next();
-        if ("Y".equalsIgnoreCase(input)) {
-            addRandomHotSong(songList, 10);
-        }
-    }
-
     // 展示歌曲列表
     public static void showSongList(ArrayList<String> songList) {
         System.out.println("-------已点歌曲列表（最大容量为20）-------");
@@ -210,7 +199,13 @@ public class Main {
 
     public static void main(String[] args) {
         ArrayList<String> songList = new ArrayList<>(20);
-        initializeSongList(songList);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("-------欢迎来到EaveLuo的KTV-------");
+        System.out.print("您是否需要随机点一批热门歌曲？y/n：");
+        String input = scanner.next();
+        if ("Y".equalsIgnoreCase(input)) {
+            addRandomHotSong(songList, 10);
+        }
         Menu(songList);
     }
 }
